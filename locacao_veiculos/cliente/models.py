@@ -36,9 +36,9 @@ class Funcionario(models.Model):
     nome = models.CharField(max_length=200)
     cpf = models.CharField(max_length=15)
     data_admissao = models.DateField()
-    endereco = models.CharField( max_length=100, null= True)
-    telefone = models.CharField(max_length=11, null=True)
-    email = models.EmailField(max_length=254, null=True)
+    endereco = models.CharField( max_length=100)
+    telefone = models.CharField(max_length=11)
+    email = models.EmailField(max_length=254)
     cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE)
 
     def __str__(self):

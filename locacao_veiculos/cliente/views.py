@@ -17,7 +17,6 @@ def clientes(request):
         #form = ClienteForm()
     return render(request, 'clientes.html', data)
 
-
 def funcionarios(request):
     data = {}
     data['funcionarios'] = Funcionario.objects.all()  # Carregando clientes do banco

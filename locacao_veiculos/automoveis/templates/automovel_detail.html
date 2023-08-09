@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalhes do Automóvel{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center">Detalhes do Automóvel</h1>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text"><strong>Placa:</strong> {{ automovel.placa }}</p>
+                    <p class="card-text"><strong>Modelo:</strong> {{ automovel.modelo }}</p>
+                    <p class="card-text"><strong>Marca:</strong> {{ automovel.marca }}</p>
+                    <p class="card-text"><strong>Cor:</strong> {{ automovel.cor }}</p>
+                    <p class="card-text"><strong>Número de Portas:</strong> {{ automovel.nr_portas }}</p>
+                    <p class="card-text"><strong>Ano:</strong> {{ automovel.ano }}</p>
+                    <p class="card-text"><strong>Combustível:</strong> {{ automovel.combustivel }}</p>
+                    <p class="card-text"><strong>Renavam:</strong> {{ automovel.renavam }}</p>
+                    <p class="card-text"><strong>Chassi:</strong> {{ automovel.chassi }}</p>
+                    <p class="card-text"><strong>Quilometragem:</strong> {{ automovel.quilometragem }}</p>
+                    <p class="card-text"><strong>Valor de Locação:</strong> {{ automovel.valor_locacao }}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'automoveis:automovel_crud' %}" class="btn btn-secondary">Voltar para a lista de automóveis</a>
+                    <a href="{% url 'automoveis:automovel_update' automovel.id %}" class="btn btn-primary">Editar</a>
+                    <form method="post" action="{% url 'automoveis:automovel_confirm_delete' automovel.id %}" style="display: inline-block;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

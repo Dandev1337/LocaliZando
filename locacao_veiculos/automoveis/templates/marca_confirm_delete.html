@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirmar Exclusão{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Confirmar Exclusão</h1>
+    <div class="alert alert-danger" role="alert">
+        <p>Você está prestes a excluir a seguinte marca de automóvel:</p>
+        <p><strong>{{ marca.nome }}</strong></p>
+        <p>Tem certeza que deseja excluir esta marca?</p>
+    </div>
+
+    <form method="post" class="d-inline">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Excluir</button>
+    </form>
+
+    <a href="{% url 'automoveis:marca_list' %}" class="btn btn-secondary">Cancelar</a>
+</div>
+{% endblock %}

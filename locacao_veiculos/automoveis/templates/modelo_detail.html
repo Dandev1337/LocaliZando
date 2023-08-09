@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalhes do Modelo de Automóvel{% endblock %}
+
+{% block content %}
+<h1>Detalhes do Modelo de Automóvel</h1>
+<p>Marca: {{ modelo.marca }}</p>
+<p>Nome: {{ modelo.nome }}</p>
+<p><a href="{% url 'modelo_update' modelo.id %}">Editar</a> | <a href="{% url 'modelo_delete' modelo.id %}">Excluir</a></p>
+{% endblock %}

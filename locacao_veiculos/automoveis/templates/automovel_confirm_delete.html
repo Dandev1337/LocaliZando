@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirmar Exclusão de Automóvel{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Confirmar Exclusão de Automóvel</h1>
+    <div class="card">
+        <div class="card-body">
+            <p>Tem certeza de que deseja excluir o seguinte automóvel?</p>
+            <p><strong>Placa:</strong> {{ automovel.placa }}</p>
+            <p><strong>Modelo:</strong> {{ automovel.modelo }}</p>
+            <p><strong>Marca:</strong> {{ automovel.marca }}</p>
+            <!-- Outras informações do automóvel... -->
+
+            <form method="post" action="{% url 'automoveis:automovel_confirm_delete' automovel.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger me-2">Confirmar Exclusão</button>
+                <a href="{% url 'automoveis:automovel_crud'%}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

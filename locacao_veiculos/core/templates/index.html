@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+  .hero-section {
+      background-color: #007fff;
+      padding: 10rem 0;
+      text-align: center;
+      color: #fff;
+  }
+
+  .hero-section h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+
+  .hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #2ecc71;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #e5e5e5;
+  }
+
+  .feature-section {
+    background-color: #f9f9f9;
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  .feature-section h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .feature-section .feature-card {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+
+  .feature-section .feature-card .icon {
+    font-size: 4rem;
+    color: #2ecc71;
+    margin-bottom: 1rem;
+  }
+
+  .feature-section .feature-card h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .feature-section .feature-card p {
+    font-size: 1.2rem;
+  }
+</style>
+
+<section class="hero-section hero-section-bg">
+  <div class="container">
+    <h1>Bem-vindo ao LocaliZando</h1>
+    <p>Facilitando a maneira de alugar automóveis</p>
+    <a href="{% url 'automoveis:automovel_list' %}" class="cta-button">Lista de Automóveis</a>
+  </div>
+</section>
+
+<section class="feature-section">
+  <div class="container">
+    <h2>Recursos em Destaque</h2>
+    <div class="feature-card">
+      <div class="card">
+        <i class="fas fa-clipboard-list icon"></i>
+        <h3>Escolha Simplificada</h3>
+        <p>Explore nossa lista digital para escolher entre diversas opções de veículos.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-cart-plus icon"></i>
+        <h3>Sem Burocracias</h3>
+        <p>Tenha certeza de bom negócio sem dores de cabeça.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

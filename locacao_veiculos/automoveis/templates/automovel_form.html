@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Formulário do Automóvel{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Registro do Automóvel</h1>
+    <form method="post" class="row g-3" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div class="col-md-6">
+            <label for="{{ form.placa_automovel.id_for_label }}" class="form-label">Placa:</label>
+            {{ form.placa_automovel }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.modelo.id_for_label }}" class="form-label">Modelo:</label>
+            {{ form.modelo }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.marca.id_for_label }}" class="form-label">Marca:</label>
+            {{ form.marca }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.cor.id_for_label }}" class="form-label">Cor:</label>
+            {{ form.cor }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.nro_portas.id_for_label }}" class="form-label">Número de Portas:</label>
+            {{ form.nro_portas }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.ano.id_for_label }}" class="form-label">Ano:</label>
+            {{ form.ano }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.tipo_combustivel.id_for_label }}" class="form-label">Combustível:</label>
+            {{ form.tipo_combustivel }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.renavam.id_for_label }}" class="form-label">Renavam:</label>
+            {{ form.renavam }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.chassi.id_for_label }}" class="form-label">Chassi:</label>
+            {{ form.chassi }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.quilometragem.id_for_label }}" class="form-label">Quilometragem:</label>
+            {{ form.quilometragem }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.valor_locacao.id_for_label }}" class="form-label">Valor de Locação:</label>
+            {{ form.valor_locacao }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.categoria.id_for_label }}" class="form-label">Categoria:</label>
+            {{ form.categoria }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.status.id_for_label }}" class="form-label">Status:</label>
+            {{ form.status }}
+        </div>
+        <div class="col-md-6">
+            <label for="{{ form.imagem.id_for_label }}" class="form-label">Imagem:</label>
+            {{ form.imagem }}
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="{% url 'automoveis:automovel_crud' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

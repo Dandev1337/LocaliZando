@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalhes da Marca{% endblock %}
+
+{% block content %}
+    <h1>Detalhes da Marca</h1>
+    <p><strong>Nome:</strong> {{ marca.nome }}</p>
+
+    <a href="{% url 'automoveis:marca_update' marca.id %}" class="btn btn-secondary btn-sm me-1">Atualizar</a>
+
+    <form method="post" action="{% url 'automoveis:marca_delete' marca.id %}" style="display: inline-block;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+    </form>
+{% endblock %}

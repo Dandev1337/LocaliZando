@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="alert alert-success" role="alert">
+            {{ mensagem }}
+        </div>
+        <a href="{% url 'automoveis:automovel_create' %}" class="btn btn-primary">Criar novo automóvel</a>
+    </div>
+{% endblock %}

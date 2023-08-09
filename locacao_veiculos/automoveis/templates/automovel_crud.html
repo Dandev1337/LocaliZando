@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Gerenciamento de Automóveis{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Gerenciamento de Automóveis</h1>
+
+    <!-- Botão para adicionar Automóvel -->
+    <a href="{% url 'automoveis:automovel_create' %}" class="btn btn-primary mb-3">Adicionar Automóvel</a>
+
+    <!-- Lista de Automóveis -->
+    <h2 class="mt-5">Lista de Automóveis</h2>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Placa</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for automovel in automoveis %}
+            <tr>
+                <td>{{ automovel.placa_automovel }}</td>
+                <td>{{ automovel.marca.nome }}</td>
+                <td>{{ automovel.modelo.nome }}</td>
+                <td>{{ automovel.ano }}</td>
+                <td>
+                    <!-- Botão para editar Automóvel -->
+                    <a href="{% url 'automoveis:automovel_update' automovel.id %}" class="btn btn-sm btn-primary me-2">Editar</a>
+                    <!-- Botão para excluir Automóvel -->
+                    <a href="{% url 'automoveis:automovel_confirm_delete' automovel.id %}" class="btn btn-sm btn-danger">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

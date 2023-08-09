@@ -1,0 +1,58 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/">LocaliZando</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Automóveis</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'automoveis:automovel_list' %}">Lista de Automóveis</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownAdm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Locações</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdm">
+                                <li><a class="dropdown-item" href="{% url 'locacao:url_locacao' %}">Gerenciar Locações</a></li>            
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownAdm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clientes</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdm">
+                                <li><a class="dropdown-item" href="{% url 'cliente:url_cliente' %}">Grenciar Clientes</a></li>           
+                            </ul>
+                        </li>
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownAdm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Funcionário</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdm">
+                                <li><a class="dropdown-item" href="{% url 'automoveis:marca_list'%}">Gerenciar Marca</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{% url 'automoveis:modelo_list'%}">Gerenciar Modelos</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{% url 'automoveis:automovel_crud' %}">Gerenciar Automóveis</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{% url 'cliente:url_funcionario' %}">Funcionários</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{% url 'cliente:url_cargo' %}">Cargos</a></li>
+
+
+
+                            </ul>
+                        </li>
+
+                        
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <a href="{% url 'login' %}" class="btn btn-primary ms-4">Login</a>
+                      </div>  
+                      
+                    <div class="d-flex align-items-center">
+                        <a href="{% url 'logout' %}" class="btn btn-link-logout ms-4">Sair</a>
+                    </div>
+                    
+                </div>
+            </div>
+</nav>
